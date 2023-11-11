@@ -1,24 +1,39 @@
 name: GitHub Actions Demo
 on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo " I am building the application..!"
-  test:
+      - run: echo "I am building the application..!"
+      - name: Install dependencies
+        run: |
+          # Add your dependency installation command here
+          # For example, for a Node.js project:
+          # npm install
 
+  test:
     runs-on: ubuntu-latest
     steps:
-
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "I am testing  the application..!"
+      - run: echo "I am testing the application..!"
+      - name: Install dependencies
+        run: |
+          # Add your dependency installation command here
+          # For example, for a Node.js project:
+          # npm install
 
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo " I am deploying the applications..."  
+      - run: echo "I am deploying the applications..."
+      - name: Install dependencies
+        run: |
+          # Add your dependency installation command here
+          # For example, for a Node.js project:
+          # npm install"  
