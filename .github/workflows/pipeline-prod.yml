@@ -3,7 +3,7 @@ name: 'Deploy Terraform to AWS'
 on:
   push:
     branches:
-      - dev
+      - main
 
  
 jobs:
@@ -23,16 +23,16 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      run: cd ./dev/ && terraform init
+      run: cd ./prod/ && terraform init
     
     - name: Terraform Format
-      run: cd ./dev/ &&  terraform validate
+      run: cd ./prod/ &&  terraform validate
 
     - name: Terraform Plan
-      run: cd ./dev/ &&  terraform plan
+      run: cd ./prod/ &&  terraform plan
 
     - name: Terraform Apply
-      run: cd ./dev/ &&  terraform apply -auto-approve
+      run: cd ./prod/ &&  terraform apply -auto-approve
       env:
         TF_VAR_aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         TF_VAR_aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
