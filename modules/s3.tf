@@ -1,3 +1,3 @@
 resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket"
+  bucket = "nik-pragmatic-2023-devops"
   }
