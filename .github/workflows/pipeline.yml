@@ -22,8 +22,8 @@ jobs:
       with:
         terraform_version: 1.1.0
 
-    - name: Configure AWS credentials
-      run: echo -e "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}\nAWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
-
     - name: Initialize Terraform
       run: terraform init
+
+    - name: Apply Terraform changes
+      run: terraform apply -auto-approve
