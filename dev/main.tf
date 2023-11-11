@@ -17,5 +17,10 @@ resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
 
-resource "aws_s3_bucket" "example" {
-  bucket = "nik-pragmatic-2023-devops"
+module "s3" {
+
+source = "../modules/"
+env = "dev"
+}
+
+
